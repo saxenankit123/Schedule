@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Vaccination Schedule</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+
+    <div>
+        <h2>Child Vaccination Schedule</h2>
+    </div>
+    <div>
+        <h3>Child Name : {{data.child_details.child_name}}</h3>
+        <h3>Age : {{data.child_details.age}}</h3>
+    </div>
+    <table>
+        <thead>
+           
+            <tr>
+                <th rowspan="1">Age</th>
+                <th rowspan="1">Vaccine</th>
+                <th rowspan="1">Due Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data.vaccine_details %}
+            <tr>
+                <td>{{ row.age }}</td>
+                <td>{{ row.vaccine }}</td>
+                <td>{{ row.due_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <p>* Above schedule is prepared by Suvita. For more details, visit <a href="https://www.suvita.org/">Suvita Website</a></p>
+</body>
+</html>
